@@ -1,20 +1,29 @@
 config_version_name: model_with_retriever
 input_example:
-- content: Give me the orders for john21@example.net
+- content: "john21@example.net \uACE0\uAC1D\uC758 \uC8FC\uBB38 \uB0B4\uC5ED\uC744\
+    \ \uD655\uC778\uD574 \uC8FC\uC138\uC694."
   role: user
 llm_endpoint_name: databricks-gemma-3-12b
 max_history_messages: 20
 mcp_server_urls: []
 retriever_config:
-  description: Search internal documentation including features, usage, and troubleshooting
-    for products, infrastructure, routers, and other products. Use it for all questions
-    regarding product documentation or product issues.
+  description: "\uC81C\uD488, \uC778\uD504\uB77C, \uB77C\uC6B0\uD130 \uBC0F \uAE30\
+    \uD0C0 \uC81C\uD488\uC758 \uAE30\uB2A5, \uC0AC\uC6A9\uBC95, \uBB38\uC81C \uD574\
+    \uACB0\uC744 \uD3EC\uD568\uD55C \uB0B4\uBD80 \uBB38\uC11C\uB97C \uAC80\uC0C9\uD569\
+    \uB2C8\uB2E4. \uC81C\uD488 \uBB38\uC11C \uB610\uB294 \uC81C\uD488 \uBB38\uC81C\
+    \uC5D0 \uB300\uD55C \uBAA8\uB4E0 \uC9C8\uBB38\uC5D0 \uC0AC\uC6A9\uD558\uC2ED\uC2DC\
+    \uC624."
   index_name: main.dbdemos_ai_agent.knowledge_base_vs_index
   num_results: 1
-  tool_name: knowledge_base_vs_index
-system_prompt: You are a telco assistant. Call the appropriate tool to help the user
-  with billing, support, or account info. DO NOT mention any internal tool or reasoning
-  steps in your final answer. Do not say according to records or imply that you are
-  looking up information.
+  tool_name: product_technical_docs_retriever
+system_prompt: "\uB2F9\uC2E0\uC740 \uD1B5\uC2E0\uC0AC \uC0C1\uB2F4\uC6D0\uC785\uB2C8\
+  \uB2E4. \uC694\uAE08, \uC9C0\uC6D0 \uC11C\uBE44\uC2A4, \uACC4\uC815 \uC815\uBCF4\
+  \ \uB4F1 \uACE0\uAC1D\uC758 \uC694\uCCAD \uB0B4\uC6A9\uC5D0 \uB300\uD574 \uC801\uD569\
+  \uD55C \uB3C4\uAD6C\uB97C \uC2E4\uD589\uD558\uC5EC \uB3C4\uC6C0\uC744 \uC81C\uACF5\
+  \uD558\uC138\uC694. \uB2F5\uBCC0 \uC2DC \uB0B4\uBD80 \uB3C4\uAD6C \uBA85\uCE6D\uC774\
+  \uB098 \uCD94\uB860 \uACFC\uC815\uC744 \uC5B8\uAE09\uD574\uC11C\uB294 \uC548 \uB418\
+  \uBA70, '\uAE30\uB85D\uC5D0 \uB530\uB974\uBA74'\uACFC \uAC19\uC740 \uC870\uD68C\
+  \ \uC911\uC784\uC744 \uC554\uC2DC\uD558\uB294 \uD45C\uD604\uB3C4 \uC0BC\uAC00\uC2DC\
+  \uAE30 \uBC14\uB78D\uB2C8\uB2E4."
 uc_tool_names:
 - main.dbdemos_ai_agent.*
