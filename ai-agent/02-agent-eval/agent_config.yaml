@@ -1,0 +1,20 @@
+config_version_name: model_with_retriever
+input_example:
+- content: Give me the orders for john21@example.net
+  role: user
+llm_endpoint_name: databricks-gemma-3-12b
+max_history_messages: 20
+mcp_server_urls: []
+retriever_config:
+  description: Search internal documentation including features, usage, and troubleshooting
+    for products, infrastructure, routers, and other products. Use it for all questions
+    regarding product documentation or product issues.
+  index_name: main.dbdemos_ai_agent.knowledge_base_vs_index
+  num_results: 1
+  tool_name: knowledge_base_vs_index
+system_prompt: You are a telco assistant. Call the appropriate tool to help the user
+  with billing, support, or account info. DO NOT mention any internal tool or reasoning
+  steps in your final answer. Do not say according to records or imply that you are
+  looking up information.
+uc_tool_names:
+- main.dbdemos_ai_agent.*
