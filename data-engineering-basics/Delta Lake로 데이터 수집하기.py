@@ -1,4 +1,8 @@
 # Databricks notebook source
+# /// script
+# [tool.databricks.environment]
+# environment_version = "4"
+# ///
 ####################################################################################
 # 카탈로그, 스키마, 볼륨 이름을 위한 Python 변수 설정 (원하면 변경 가능)
 catalog_name = "dbacademy"
@@ -161,4 +165,4 @@ COPY INTO current_employees_copyinto
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC dbacademy.ingesting_data.current_employees_copyinto
+# MAGIC DESCRIBE HISTORY current_employees_copyinto;
