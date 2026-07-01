@@ -106,4 +106,7 @@ spark.sql(f'USE SCHEMA {schema_name}')
 # MAGIC INSERT OVERWRITE TABLE total_roles_gold_job
 # MAGIC SELECT * 
 # MAGIC FROM temp_view_total_roles_job;
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes

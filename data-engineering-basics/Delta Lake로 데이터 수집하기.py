@@ -161,8 +161,11 @@ COPY INTO current_employees_copyinto
 # MAGIC %sql
 # MAGIC Select *
 # MAGIC from current_employees_copyinto;
+<<<<<<< Updated upstream
 
 # COMMAND ----------
 
 # MAGIC %sql
 # MAGIC DESCRIBE HISTORY current_employees_copyinto;
+=======
+>>>>>>> Stashed changes
